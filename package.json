@@ -1,7 +1,7 @@
 {
   "name": "minimal-element",
   "version": "0.0.0",
-  "description": "Factory to create minimal DOM-like elements.",
+  "description": "Factory which creates minimal DOM-like elements.",
   "author": {
     "name": "Athan Reines",
     "email": "kgryte@gmail.com"

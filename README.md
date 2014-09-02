@@ -2,7 +2,7 @@ Minimal Element
 ===============
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Factory to create minimal DOM-like elements.
+> Factory which creates minimal DOM-like elements.
 
 
 
