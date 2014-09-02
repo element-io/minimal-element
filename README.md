@@ -8,6 +8,7 @@ Minimal Element
 
 ## Notes
 
+D3-like API (inspired by). Node module: html-element --> too DOM-like. Just want to serialize.  Comments not included (not inserted into D3 output). DOM-like in the sense that they correspond to DOM elements and you can nest them; share similar methods; but similarities stop there: this is intentionally NOT a full-featured emulator.
 
 
 
