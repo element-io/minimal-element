@@ -54,7 +54,7 @@ canvas
 	.attr( 'height', 500 );
 ```
 
-Whenever you create SVG elements, ensure that the parent SVG container is [namespaced](https://github.com/element-io/minimal-svg-element). In a DOM environment, you are able to use namespace aware methods, such as `createElementNS()`, `setAttributeNS()`, `getAttributeNS()`, et cetera, enabling the browser to properly interpret created elements. Here, we have no DOM; we are serializing elements to string. To ensure that a client (i.e., the browser) uses the appropriate XML dialect when rendering SVG elements, be sure to set the namespace. The attributes in the example should be all you need.
+Whenever you create SVG elements, ensure that the parent SVG container is [namespaced](https://github.com/element-io/minimal-svg-element). In a DOM environment, you are able to use namespace aware methods, such as `createElementNS()`, `setAttributeNS()`, `getAttributeNS()`, et cetera, enabling the browser to properly interpret created elements. Here, we have no DOM; we are serializing elements to string. To ensure that a client (e.g., the browser) uses the appropriate XML dialect when rendering SVG elements, be sure to set the namespace. The attributes in the example should be all you need.
 
 
 #### element.custom( name )
@@ -87,7 +87,7 @@ text
 
 ``` javascript
 
-var element = require( './../lib' );
+var element = require( 'minimal-element' );
 
 // Methods to create elements:
 var createHTMLElement = element.html,
