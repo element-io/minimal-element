@@ -49,11 +49,12 @@ canvas
 	.attr( 'xmlns', 'http://www.w3.org/2000/svg' )
 	.attr( 'xmlns:xlink', 'http://www.w3.org/1999/xlink' )
 	.attr( 'xmlns:ev', 'http://www.w3.org/2001/xml-events' )
+	.attr( 'class', 'canvas' )
 	.attr( 'width', 500 )
 	.attr( 'height', 500 );
 ```
 
-Whenever you create SVG elements, ensure that the parent SVG container is [namespaced](https://github.com/element-io/minimal-svg-element). In a DOM environment, you are able to use namespace aware methods, such as `createElementNS()`, 'setAttributeNS()', 'getAttributeNS()`, et cetera, enabling the browser to properly interpret created elements. Here, we have no DOM; we are serializing elements to string. To ensure that a client (i.e., the browser) uses the appropriate XML dialect when rendering SVG elements, be sure to set the namespace. The attributes in the example should be all you need.
+Whenever you create SVG elements, ensure that the parent SVG container is [namespaced](https://github.com/element-io/minimal-svg-element). In a DOM environment, you are able to use namespace aware methods, such as `createElementNS()`, `setAttributeNS()`, `getAttributeNS()`, et cetera, enabling the browser to properly interpret created elements. Here, we have no DOM; we are serializing elements to string. To ensure that a client (i.e., the browser) uses the appropriate XML dialect when rendering SVG elements, be sure to set the namespace. The attributes in the example should be all you need.
 
 
 #### element.custom( name )
