@@ -2,9 +2,13 @@ Minimal Element
 ===============
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Factory which creates minimal DOM-like elements.
+> Library for creating minimal DOM-like elements.
 
+This module provides a base class for creating minimal elements. These elements are DOM-like in the sense that they can have `tag` names, can have `attributes`, and can be nested. The comparisons stop there.
 
+The motivation for this module is __not__ to replicate/emulate the DOM/browser on the server. Many other modules do that: [JSDOM](https://github.com/tmpvar/jsdom), [Cheerio](https://github.com/cheeriojs/cheerio), [html-element](https://github.com/1N50MN14/html-element), and others.
+
+Instead, the motivation lines in wanting a minimal set of components for dynamically creating HTML/SVG/XML documents and serializing those documents to strings. 
 
 ## Notes
 
@@ -55,17 +59,17 @@ Copyright &copy; 2014. Athan Reines.
 [npm-image]: http://img.shields.io/npm/v/minimal-element.svg
 [npm-url]: https://npmjs.org/package/minimal-element
 
-[travis-image]: http://img.shields.io/travis/kgryte/minimal-element/master.svg
-[travis-url]: https://travis-ci.org/kgryte/minimal-element
+[travis-image]: http://img.shields.io/travis/element-io/minimal-element/master.svg
+[travis-url]: https://travis-ci.org/element-io/minimal-element
 
-[coveralls-image]: https://img.shields.io/coveralls/kgryte/minimal-element/master.svg
-[coveralls-url]: https://coveralls.io/r/kgryte/minimal-element?branch=master
+[coveralls-image]: https://img.shields.io/coveralls/element-io/minimal-element/master.svg
+[coveralls-url]: https://coveralls.io/r/element-io/minimal-element?branch=master
 
-[dependencies-image]: http://img.shields.io/david/kgryte/minimal-element.svg
-[dependencies-url]: https://david-dm.org/kgryte/minimal-element
+[dependencies-image]: http://img.shields.io/david/element-io/minimal-element.svg
+[dependencies-url]: https://david-dm.org/element-io/minimal-element
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/kgryte/minimal-element.svg
-[dev-dependencies-url]: https://david-dm.org/dev/kgryte/minimal-element
+[dev-dependencies-image]: http://img.shields.io/david/dev/element-io/minimal-element.svg
+[dev-dependencies-url]: https://david-dm.org/dev/element-io/minimal-element
 
-[github-issues-image]: http://img.shields.io/github/issues/kgryte/minimal-element.svg
-[github-issues-url]: https://github.com/kgryte/minimal-element/issues
+[github-issues-image]: http://img.shields.io/github/issues/element-io/minimal-element.svg
+[github-issues-url]: https://github.com/element-io/minimal-element/issues

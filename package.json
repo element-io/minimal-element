@@ -1,7 +1,7 @@
 {
   "name": "minimal-element",
   "version": "0.0.0",
-  "description": "Factory which creates minimal DOM-like elements.",
+  "description": "Library for creating minimal DOM-like elements.",
   "author": {
     "name": "Athan Reines",
     "email": "kgryte@gmail.com"
@@ -20,17 +20,25 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kgryte/minimal-element.git"
+    "url": "git://github.com/element-io/minimal-element.git"
   },
   "keywords": [
     "DOM",
     "html",
-    "element"
+    "svg",
+    "element",
+    "element.io",
+    "minimal element"
   ],
   "bugs": {
-    "url": "https://github.com/kgryte/minimal-element/issues"
+    "url": "https://github.com/element-io/minimal-element/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "minimal-custom-element": "^1.0.0",
+    "minimal-html-element": "^0.1.1",
+    "minimal-svg-element": "0.0.0",
+    "minimal-text-node": "0.0.0"
+  },
   "devDependencies": {
     "chai": "1.x.x",
     "coveralls": "^2.11.1",
