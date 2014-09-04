@@ -34,10 +34,10 @@
     "url": "https://github.com/element-io/minimal-element/issues"
   },
   "dependencies": {
-    "minimal-custom-element": "^1.0.0",
-    "minimal-html-element": "^0.1.1",
-    "minimal-svg-element": "0.0.0",
-    "minimal-text-node": "0.0.0"
+    "minimal-custom-element": "^1.0.2",
+    "minimal-html-element": "^0.1.3",
+    "minimal-svg-element": "0.0.3",
+    "minimal-text-node": "0.0.1"
   },
   "devDependencies": {
     "chai": "1.x.x",

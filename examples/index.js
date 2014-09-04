@@ -4,6 +4,7 @@ var element = require( './../lib' );
 // Methods to create elements:
 var createHTMLElement = element.html,
 	createSVGElement = element.svg,
+	createCustomElement = element.custom,
 	createTextNode = element.text;
 
 // Define some variables:
@@ -15,11 +16,19 @@ var width = 600,
 	yPos;
 
 // Define our elements:
-var figure,
+var widget,
+	figure,
 	canvas,
 	data,
 	caption,
 	text;
+
+// Create a custom figure widget:
+widget = createCustomElement( 'widget-figure' );
+
+widget
+	.attr( 'property', 'widget' )
+	.attr( 'class', 'widget' );
 
 // Create a new figure element:
 figure = createHTMLElement( 'figure' );
@@ -35,6 +44,7 @@ canvas = createSVGElement( 'svg' );
 canvas
 	.attr( 'xmlns', 'http://www.w3.org/2000/svg' )
 	.attr( 'xmlns:xlink', 'http://www.w3.org/1999/xlink' )
+	.attr( 'xmlns:ev', 'http://www.w3.org/2001/xml-events' )
 	.attr( 'property', 'canvas' )
 	.attr( 'class', 'canvas' )
 	.attr( 'width', width )
@@ -42,6 +52,9 @@ canvas
 	.attr( 'viewBox', '0 0 ' + width + ' ' + height )
 	.attr( 'preserveAspectRatio', 'xMidYMid' )
 	.attr( 'data-aspect', width/height );
+
+// Append the figure to the widget:
+widget.append( figure );
 
 // Append the canvas to the figure:
 figure.append( canvas );
@@ -62,13 +75,14 @@ for ( var i = 0; i < numData; i++ ) {
 	canvas.append( data[ i ] );
 }
 
-// Create a caption element and insert some text:
-caption = createHTMLElement( 'div' );
+// Create a caption element:
+caption = createHTMLElement( 'figcaption' );
 
 caption
 	.attr( 'property', 'caption' )
 	.attr( 'class', 'caption' );
 
+// Create a text node to insert text into the caption element:
 text = createTextNode();
 
 text.content( 'Random particles on a canvas.' );
@@ -80,4 +94,4 @@ caption.append( text );
 figure.append( caption );
 
 // Serialize the figure:
-console.log( figure.toString() );
+console.log( widget.toString() );
