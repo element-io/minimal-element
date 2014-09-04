@@ -4,16 +4,24 @@ Minimal Element
 
 > Library for creating minimal DOM-like elements.
 
-This module provides a base class for creating minimal elements. These elements are DOM-like in the sense that they can have `tag` names, can have `attributes`, and can be nested. The comparisons stop there.
+This library exposes methods for creating minimal DOM-like elements. These elements are DOM-like in the sense that they can have `tag` names, can have `attributes`, and can be nested. The comparisons stop there.
 
-The motivation for this module is __not__ to replicate/emulate the DOM/browser on the server. Many other modules do that: [JSDOM](https://github.com/tmpvar/jsdom), [Cheerio](https://github.com/cheeriojs/cheerio), [html-element](https://github.com/1N50MN14/html-element), and others.
+The motivation for this library is __not__ to replicate/emulate the DOM/browser on the server. Many other modules do that: [JSDOM](https://github.com/tmpvar/jsdom), [Cheerio](https://github.com/cheeriojs/cheerio), [html-element](https://github.com/1N50MN14/html-element), and others.
 
-Instead, the motivation lines in wanting a minimal set of components for dynamically creating HTML/SVG/XML documents and serializing those documents to strings. 
+Instead, the motivation lines in wanting a minimal set of components for dynamically creating HTML/SVG/XML documents and serializing those documents to strings.
+
+
 
 ## Notes
 
-D3-like API (inspired by). Node module: html-element --> too DOM-like. Just want to serialize.  Comments not included (not inserted into D3 output). DOM-like in the sense that they correspond to DOM elements and you can nest them; share similar methods; but similarities stop there: this is intentionally NOT a full-featured emulator.
-
+* 	What this library does __not__ provide:
+	- 	methods to "select" elements
+	- 	a DOM
+	- 	methods to dynamically remove, replace, manipulate, and prepend elements
+	- 	support for including comments
+*	The `Element` API is inspired by [D3](http://d3js.org):
+	- 	`element.attr()`
+	- 	`element.append()`
 
 
 ## Tests
