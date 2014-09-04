@@ -11,6 +11,186 @@ The motivation for this library is __not__ to replicate/emulate the DOM/browser 
 Instead, the motivation lines in wanting a minimal set of components for dynamically creating HTML/SVG/XML documents and serializing those documents to strings.
 
 
+## Installation
+
+``` bash
+$  npm install minimal-element --save
+```
+
+
+## Usage
+
+``` javascript
+var element = require( 'minimal-element' );
+```
+
+The library has the following methods...
+
+
+#### element.html( name )
+
+Takes a tag `name` and returns a [minimal HTML element](https://github.com/element-io/minimal-html-element).
+
+``` javascript
+var div = element.html( 'div' );
+
+div.attr( 'class', 'container' );
+```
+
+
+#### element.svg( name )
+
+Takes a tag `name` and returns a [minimal SVG element](https://github.com/element-io/minimal-svg-element).
+
+``` javascript
+var canvas = element.svg( 'svg' );
+
+canvas
+	.attr( 'xmlns', 'http://www.w3.org/2000/svg' )
+	.attr( 'xmlns:xlink', 'http://www.w3.org/1999/xlink' )
+	.attr( 'xmlns:ev', 'http://www.w3.org/2001/xml-events' )
+	.attr( 'width', 500 )
+	.attr( 'height', 500 );
+```
+
+Whenever you create SVG elements, ensure that the parent SVG container is [namespaced](https://github.com/element-io/minimal-svg-element). In a DOM environment, you are able to use namespace aware methods, such as `createElementNS()`, 'setAttributeNS()', 'getAttributeNS()`, et cetera, enabling the browser to properly interpret created elements. Here, we have no DOM; we are serializing elements to string. To ensure that a client (i.e., the browser) uses the appropriate XML dialect when rendering SVG elements, be sure to set the namespace. The attributes in the example should be all you need.
+
+
+#### element.custom( name )
+
+Takes a custom tag `name` and returns a [minimal custom element](https://github.com/element-io/minimal-custom-element).
+
+``` javascript
+var myElement = element.custom( 'my-element' );
+
+myElement.attr( 'class', 'special-widget' );
+```
+
+When naming custom elements, be sure to follow the custom element naming [convention](https://github.com/element-io/validate-element-name).
+
+
+#### element.text()
+
+Returns a [minimal text node](https://github.com/element-io/minimal-text-node).
+
+``` javascript
+var text = element.text();
+
+text
+	.content( 'Hello' )
+	.append( ' world!' );
+```
+
+
+## Examples
+
+``` javascript
+
+var element = require( './../lib' );
+
+// Methods to create elements:
+var createHTMLElement = element.html,
+	createSVGElement = element.svg,
+	createCustomElement = element.custom,
+	createTextNode = element.text;
+
+// Define some variables:
+var width = 600,
+	height = 400,
+	numData = 100,
+	radius = 5,
+	xPos,
+	yPos;
+
+// Define our elements:
+var widget,
+	figure,
+	canvas,
+	data,
+	caption,
+	text;
+
+// Create a custom figure widget:
+widget = createCustomElement( 'widget-figure' );
+
+widget
+	.attr( 'property', 'widget' )
+	.attr( 'class', 'widget' );
+
+// Create a new figure element:
+figure = createHTMLElement( 'figure' );
+
+// Configure the figure:
+figure
+	.attr( 'property', 'figure' )
+	.attr( 'class', 'figure' );
+
+// Create a new SVG canvas element and configure:
+canvas = createSVGElement( 'svg' );
+
+canvas
+	.attr( 'xmlns', 'http://www.w3.org/2000/svg' )
+	.attr( 'xmlns:xlink', 'http://www.w3.org/1999/xlink' )
+	.attr( 'xmlns:ev', 'http://www.w3.org/2001/xml-events' )
+	.attr( 'property', 'canvas' )
+	.attr( 'class', 'canvas' )
+	.attr( 'width', width )
+	.attr( 'height', height )
+	.attr( 'viewBox', '0 0 ' + width + ' ' + height )
+	.attr( 'preserveAspectRatio', 'xMidYMid' )
+	.attr( 'data-aspect', width/height );
+
+// Append the figure to the widget:
+widget.append( figure );
+
+// Append the canvas to the figure:
+figure.append( canvas );
+
+// Create data elements and append to the canvas...
+data = new Array( numData );
+for ( var i = 0; i < numData; i++ ) {
+	xPos = Math.round( Math.random()*width );
+	yPos = Math.round( Math.random()*height );
+
+	data[ i ] = createSVGElement( 'circle' );
+
+	data[ i ]
+		.attr( 'cx', xPos )
+		.attr( 'cy', yPos )
+		.attr( 'r', radius );
+
+	canvas.append( data[ i ] );
+}
+
+// Create a caption element:
+caption = createHTMLElement( 'figcaption' );
+
+caption
+	.attr( 'property', 'caption' )
+	.attr( 'class', 'caption' );
+
+// Create a text node to insert text into the caption element:
+text = createTextNode();
+
+text.content( 'Random particles on a canvas.' );
+
+// Append the text to the caption element:
+caption.append( text );
+
+// Append the caption to the figure:
+figure.append( caption );
+
+// Serialize the figure:
+console.log( widget.toString() );
+```
+
+
+To run the example code from the top-level application directory,
+
+``` bash
+$ node ./examples/index.js
+```
+
 
 ## Notes
 
