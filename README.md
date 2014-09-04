@@ -6,7 +6,7 @@ Minimal Element
 
 This library exposes methods for creating minimal DOM-like elements. These elements are DOM-like in the sense that they can have `tag` names, can have `attributes`, and can be nested. The comparisons stop there.
 
-The motivation for this library is __not__ to replicate/emulate the DOM/browser on the server. Many other modules do that: [JSDOM](https://github.com/tmpvar/jsdom), [Cheerio](https://github.com/cheeriojs/cheerio), [html-element](https://github.com/1N50MN14/html-element), and others.
+The motivation for this library is __not__ to replicate/emulate the DOM/browser on the server. Many other modules do that: [JSDOM](https://github.com/tmpvar/jsdom), [Cheerio](https://github.com/cheeriojs/cheerio), [html-element](https://github.com/1N50MN14/html-element), and others. Nor is the motivation to create another templating library. Many other modules do that: [underscore](http://underscorejs.org/#template), [jade](http://jade-lang.com/), [Mustache.js](http://mustache.github.io/), and others.
 
 Instead, the motivation lines in wanting a minimal set of components for dynamically creating HTML/SVG/XML documents and serializing those documents to strings.
 
