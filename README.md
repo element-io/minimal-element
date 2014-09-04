@@ -19,7 +19,7 @@ Instead, the motivation lines in wanting a minimal set of components for dynamic
 	- 	a DOM
 	- 	methods to dynamically remove, replace, manipulate, and prepend elements
 	- 	support for including comments
-*	The `Element` API is inspired by [D3](http://d3js.org):
+*	The [Element](https://github.com/element-io/element) API is inspired by [D3](http://d3js.org):
 	- 	`element.attr()`
 	- 	`element.append()`
 
